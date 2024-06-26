@@ -238,7 +238,7 @@ async function load_models(models) {
         modelUrl = `${config.model}/${name}/model.onnx`;
       } else if (name == "safety_checker") {
         modelNameInLog = "Safety Checker";
-        modelUrl = `${config.model}/${name}/model.onnx`;
+        modelUrl = `${config.model}/${name}/safety_checker_int32_reduceSum.onnx`;
       }
       log(`[Load] Loading model ${modelNameInLog} · ${model.size}`);
       let modelBuffer = await getModelOPFS(`sd_turbo_${name}`, modelUrl, false);
